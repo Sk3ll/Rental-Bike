@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Bike</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Awesome Bike Rental</h1>
+    </header>
+    <!-- NEW RENT -->
+    
+    <section class="new-rent">
+        <h3>🤑 Create New Rent</h3>
+        <div class="new-rent__inputs">
+            <label class="inputs__item">
+                <span>Bike Name</span>
+                <input type="text">
+            </label>
+            <label class="inputs__item" for="bike-type">
+                <span>Bike Type</span>
+                <select id="bike-type"  >
+                    <option value="road">Road</option>
+                    <option value="ountain">Mountain</option>
+                    <option value="hybrid">Hybrid/commuter</option>
+                    <option value="cyclocross">Cyclocross</option>
+                    <option value="folding">Folding</option>
+                    <option value="electric">Electric</option>
+                    <option value="touring">Touring</option>
+                    <option value="womens">Women’s</option>
+                </select>
+            </label>
+            <label class="inputs__item">
+                <span>Rent Price</span>
+                <input type="number">
+            </label>
+            <button class="new-rent__btn">Submint rent</button>
+        </div>
+    </section>
+    
+    <!-- YOUR RENT -->
+    <section class="your-rent">
+        <h3>🤩 Your rent (total: $12.99)</h3>
+        <div class="your-rent__item">
+            <span>FastBike / Road / $12.99</span>
+            <button class="your-rent__btn">Cancel rent</button>
+        </div>
+    </section>
+
+    <!-- AVAILABLE BIKE -->
+    <section class="available-rent">
+        <h3>🚲 Available Bicycles (3)</h3>
+        <div class="available-rent__item">
+            <span>FastBike / Road / $12.99</span>
+            <div class="item__btns">
+                <button class="btns__rent">Rent</button>
+                <button class="btns__delete">Delete</button>
+            </div>
+        </div>
+        <div class="available-rent__item">
+            <span>FastBike / Road / $12.99</span>
+            <div class="item__btns">
+                <button class="btns__rent">Rent</button>
+                <button class="btns__delete">Delete</button>
+            </div>
+        </div>
+        <div class="available-rent__item">
+            <span>FastBike / Road / $12.99</span>
+            <div class="item__btns">
+                <button class="btns__rent">Rent</button>
+                <button class="btns__delete">Delete</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

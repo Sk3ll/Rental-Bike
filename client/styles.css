@@ -1,0 +1,148 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+    background-color: #f5f5f5;
+    margin: 20px 220px;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    
+}
+
+ul {padding: 0;}
+li {list-style: none;}
+
+h1, h2, h3, p, label, input, select{
+    color: #4a4a4a;
+}
+
+.new-rent__inputs {
+    background-color: #e8eaef;
+    border: 1px solid #dbdddf;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.inputs__item {
+    display: flex;
+    flex-direction: column;
+    font-size: 11pt;
+    width: 25%;
+}
+.inputs__item input, select {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #dbdddf;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 12pt;
+    padding: 5px;
+}
+.inputs__item input {
+    height: 33px;
+}
+input:focus, select:focus {
+    outline-color:#4a4a4a;
+}
+button:focus {
+    outline: none;
+}
+
+button {
+    height: 45px;
+    width: 140px;
+    border-radius: 5px;
+    color: white;
+    font-size: 13pt;
+}
+
+.new-rent__btn {
+
+    background-color: #20bc99;
+    border: 1px solid #20bc99;
+
+}
+.new-rent__btn:hover {
+    background-color: #20ad8f;
+}
+
+.your-rent__item, .available-rent__item {
+    border: 1px solid #dbdddf;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.your-rent__btn, .btns__delete{
+    background-color: #f3323f;
+    border: 1px solid #f3323f;
+}
+.your-rent__btn:hover, .btns__delete:hover {
+    background-color: #b8242e;
+}
+.btns__rent{
+    background-color: #3650c8;
+    border: 1px solid #3650c8;
+    margin-right: 20px;
+}
+.btns__rent:hover {
+    background-color: #1f3dc2;
+}
+
+@media (max-width: 991px) {
+    body {
+        margin: 10px 100px;
+    }
+    .new-rent__inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputs__item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        margin: 10px 50px;
+    }
+}
+
+@media (max-width: 479px) {
+    body {
+        margin: 10px 20px;
+    }
+    .available-rent__item, .your-rent__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .available-rent__item span, .your-rent__item span {
+        margin: 20px 0;
+    }
+    .btns__rent {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        margin: 10px 10px;
+    }
+    .item__btns {
+        text-align: center;
+    }
+    .btns__rent {
+        margin-right: 0;
+    }
+}
