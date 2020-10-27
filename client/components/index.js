@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link, withRouter } from "react-router-dom";
 
 class Index extends Component {
   constructor(props) {
@@ -25,9 +24,7 @@ class Index extends Component {
         });
       });
     }
-
   }
-
   onDelete(e) {
     axios
       .delete(`http://localhost:3333/api/items/${e}`)
