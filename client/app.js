@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Rental from "./components/rental";
 import New from "./components/new";
-import Index from "./components/available";
+import Index from "./components/index";
 
 
 const App = () => (
