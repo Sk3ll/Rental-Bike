@@ -1,7 +1,6 @@
 {
   "name": "rental-bike-app",
   "version": "2.0.0",
-  "main": "server.js",
   "license": "MIT",
   "author": "Yaroslav Malykhin",
   "dependencies": {
@@ -20,8 +19,8 @@
     "react-router-dom": "^5.2.0"
   },
   "scripts": {
-    "server": "nodemon",
-    "client": "parcel client/index.html",
+    "server": "npm run start",
+    "client": "parcel client-old/index.html",
     "dev": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "devDependencies": {

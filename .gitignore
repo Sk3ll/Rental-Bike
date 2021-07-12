@@ -1,6 +1,9 @@
-# compiled output
+# Compiled output
 dist
 /node_modules
+build
+/.pnp
+.pnp.js
 
 # Logs
 logs
@@ -16,6 +19,12 @@ lerna-debug.log*
 # Tests
 /coverage
 /.nyc_output
+
+# Misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # IDEs and editors
 /.idea
