@@ -6,6 +6,9 @@ export type BikeDocument = Bike & Document;
 @Schema()
 export class Bike {
   @Prop()
+  _id: string;
+
+  @Prop()
   name: string;
 
   @Prop()
@@ -13,6 +16,9 @@ export class Bike {
 
   @Prop()
   price: number;
+
+  @Prop()
+  isRental: boolean;
 }
 
 export const BikeSchema = SchemaFactory.createForClass(Bike);

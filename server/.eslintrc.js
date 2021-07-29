@@ -29,5 +29,6 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-useless-constructor': 'off',
     'no-return-await': 'off',
+    'new-cap': 'off',
   },
 };

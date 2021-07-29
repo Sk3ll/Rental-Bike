@@ -1,26 +1,39 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model, UpdateWriteOpResult } from 'mongoose';
+import { v4 as uuidV4 } from 'uuid';
 import { CreateBikeDto } from './dto/create-bike.dto';
+import { Bike, BikeDocument } from './entities/bike.entity';
 import { UpdateBikeDto } from './dto/update-bike.dto';
 
 @Injectable()
 export class BikesService {
-  create(createBikeDto: CreateBikeDto) {
-    return 'This action adds a new bike';
+  constructor(@InjectModel(Bike.name) private bikeModel: Model<BikeDocument>) {}
+
+  async create(createBikeDto: CreateBikeDto): Promise<Bike | ForbiddenException> {
+    const isExist = await this.bikeModel.findOne({ name: createBikeDto.name }).exec();
+
+    if (isExist) {
+      return new ForbiddenException('This name already exist');
+    }
+
+    const createdBike = new this.bikeModel({ ...createBikeDto, _id: uuidV4() });
+    return createdBike.save();
   }
 
-  findAll() {
-    return `This action returns all bikes`;
+  findAll(isRental?: boolean): Promise<Bike[]> {
+    return this.bikeModel.find({ isRental }).exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bike`;
+  findOne(id: string): Promise<Bike> {
+    return this.bikeModel.findOne({ _id: id }).exec();
   }
 
-  update(id: number, updateBikeDto: UpdateBikeDto) {
-    return `This action updates a #${id} bike`;
+  update(updateBikeDto: UpdateBikeDto, id: string): Promise<UpdateWriteOpResult> {
+    return this.bikeModel.updateOne({ _id: id }, updateBikeDto).exec();
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} bike`;
+  remove(id: string): Promise<{ ok?: number | undefined; n?: number | undefined } & { deletedCount?: number }> {
+    return this.bikeModel.deleteOne({ _id: id }).exec();
   }
 }

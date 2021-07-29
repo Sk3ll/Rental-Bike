@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsEmpty } from 'class-validator';
+import { IsString, IsNumber, IsEmpty, IsBoolean } from 'class-validator';
 
 export class CreateBikeDto {
   @IsString()
@@ -12,4 +12,8 @@ export class CreateBikeDto {
   @IsEmpty()
   @IsNumber()
   price: number;
+
+  @IsEmpty()
+  @IsBoolean()
+  isRental: boolean;
 }
